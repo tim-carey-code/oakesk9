@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: oakesk9_production
-  username: oakesk9
-  password: <%= ENV["OAKESK9_DATABASE_PASSWORD"] %>
+  username: timcarey
+  password: <%= ENV['PSQL_DB_PASSWORD'] %>
