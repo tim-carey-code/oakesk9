@@ -1,0 +1,25 @@
+<%= form_with(model: blog) do |form| %>
+  <% if blog.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+      <ul>
+        <% blog.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="container w-50 d-flex justify-content-center align-items-center flex-column">
+    <div>
+      <%= form.label :title, class: "mb-1 text-center d-block" %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :content, class: "d-block text-center mb-1" %>
+      <%= form.rich_text_area :content %>
+    </div>
+    <div class="mt-2">
+      <%= form.button "Create blog", type: :submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<nav data-controller="active" class="navbar navbar-expand-lg navbar-light bg-danger">
+  <div class="container-fluid">
+    <a id="brand-text" class="navbar-brand pe-5" href="/">Oakes K9 Training</a>
+    <button class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse"
+             data-bs-target="#navbarSupportedContent" 
+             aria-controls="navbarSupportedContent"
+              aria-expanded="false" 
+              aria-label="Toggle navigation"
+              style="background-color: white;"
+              
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item nav-text">
+          <a class="nav-link-custom active-custom" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link-custom" href="/blogs">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link-custom" href="/contact">Contact</a>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Sign Out", destroy_user_session_path, class: "nav-link-custom", data: { turbo_method: :delete }, method: :delete %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign In", new_user_session_path, class: "nav-link-custom" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

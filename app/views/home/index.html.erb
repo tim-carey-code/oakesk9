@@ -1,0 +1,51 @@
+<button data-controller="scroll" id="myBtn" class='btn btn-danger scroll-top' title='Go to top'>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
+    <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+  </svg>
+</button>
+<div class="jumbotron">
+  <div class="jumbotron-container position-absolute top-0 start-50 translate-middle-x header-text container text-center mt-4 p-5 rounded" style="background-color: rgba(255, 255, 255, 0.5);">
+    <h1 class="welcome-heading">Welcome to Oakes K9 Training</h1>
+    <p class="slogan">Training from your dogs point of view!
+    </p>
+    <button id="contact-btn" class="btn btn-primary">Contact</button>
+    <a id="blog-btn" href='/blogs' class='btn btn-secondary'>Blog</a>
+  </div>
+</div>
+<main>
+  <div>
+    <div class='container w-75 border border-danger mb-3 mt-3 col body-text'>
+      <h2 class='body-header mt-2 border-bottom border-danger text-center'>What Makes Oakes K9 Training The Best?</h2>
+      <p class='text-center text-wrap'>
+        Sue Oakes has over 30 years of knowledge and experience to give your dog the proper training they need, and deserve.
+        Whether your dog needs manners, rally, agility, or obedience training, Oakes has you covered. Sue is one of the top
+        trainers in the region and she is a retired certified Animal Control Officier, American Kennel Club Canine Good Citizen(CGC),
+        an evaluator for Bright and Beautiful Therapy Dogs, a judge(all levels) of Champion Dog Sports Program (CDSP),
+        a judge(all levels) of Cynosport, A member of The Association of Professional Dog Trainers, and International Association of Canine Professionals (IACP). Sue's understanding of animal behavior,
+        unmatched love for dogs, and her many years of practical experience make her an excellent
+        resource for all things canine! 
+        <span style="cursor: pointer; text-decoration: underline; color: blue;" id="contact-span" >Contact us</span>
+        today to schedule training for your dog and see for yourself why we were voted the best of Bucks/Mont 2012!
+      </p>
+      <div class="row align-items-start">
+        <div class="col">
+          <%= image_tag('sueAndDog.jpg', :title => 'Sue and her Dog', :alt => 'Sue and her Dog', :class => "img-fluid d-block mx-auto") %>
+        </div>
+        <div class="col">
+          <%= image_tag('bestOfBucksMont2012.jpg', :title => "Best of Bucks/Mont 2012", :alt => 'Best of Bucks/Mont 2012', :class => "best-of d-block mx-auto img-fluid")  %>
+        </div>
+        <br>
+        <div class='container position-relative translate-middle-x start-50 top-50'>
+          <h3 class="body-header font-weight-bold text-center mt-2 border-bottom border-danger">Contact Us</h3>
+          <p class="text-center text-wrap">Email or <span style="cursor: pointer; text-decoration: underline;" data-bs-toggle="tooltip" data-bs-placement="right" title="(267)-809-6086">call us</span> today to start training your dog with us! Please include as much information about the dog as you can including breed, how long you have had the dog, and what problems you may be having.
+            We're located in beautiful Horsham, PA on 319D Norristown Road. <br />
+            <a target="_blank" href="https://www.google.com/maps/dir//Oakes+K9+Training,+319+Norristown+Rd,+Horsham,+PA+19044/@40.1827765,-75.1366595,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c6a4dba536a039:0x5a8621a8bad47f65!2m2!1d-75.1343883!2d40.1827137!3e0">
+              Click here</a> for a map with directions from your location!
+          </p>
+          <%= render partial: "layouts/contact_form" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

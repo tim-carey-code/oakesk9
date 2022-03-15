@@ -1,0 +1,15 @@
+<div class="w-100" id="<%= dom_id blog %>">
+  <p>
+    <strong>Title:</strong>
+    <%= blog.title %>
+  </p>
+  <p>
+    <strong>Content:</strong>
+    <%= blog.content %>
+  </p>
+  <p>
+    <strong>User:</strong>
+    <% user = User.find(blog.user_id) %>
+    <%= user.first_name + " " + user.last_name %>
+  </p>
+</div>
