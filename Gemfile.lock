@@ -267,6 +267,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mail_form (~> 1.9)
+  nokogiri (~> 1.13, >= 1.13.3)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.2)
