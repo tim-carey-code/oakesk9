@@ -1,9 +1,8 @@
-<div class="text-center" id="blogs">
-  <% @blogs.each do |blog| %>
-    <%= render blog %>
-    <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
-  <% end %>
+<div class="container m-2" id="blogs">
+  <div class="row">
+    <% @blogs.each do |blog| %>
+      <%= render blog %>
+    <% end %>
+  </div>
 </div>
 <%= link_to "New blog", new_blog_path %>

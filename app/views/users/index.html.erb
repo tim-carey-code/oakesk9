@@ -1,0 +1,11 @@
+<div class="container d-flex flex-column m-2" id="blogs">
+  <ul>
+    <% @users.each do |user| %>
+      <% if user.admin? %>
+        <li> <%= user.email %> is Admin </li>
+      <%else %>
+        <li> <%= user.email %> </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

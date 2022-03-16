@@ -1,12 +1,10 @@
-<div>
-  <figure class="attachment attachment--<%= blob.representable? ? "preview" : "file" %> attachment--<%= blob.filename.extension %>">
-    <% if blob.representable? %>
-      <%= image_tag blob.representation(resize_to_limit: local_assigns[:in_gallery] ? [ 100, 100 ] : [ 400, 400 ]), class: "m-2" %>
+<figure class="attachment attachment--<%= blob.representable? ? "blog-image" : "file" %> attachment--<%= blob.filename.extension %>">
+  <% if blob.representable? %>
+    <%= image_tag blob.representation(resize_to_limit: local_assigns[:in_gallery] ? [ 400, 400 ] : [ 400, 400 ]), class: "card-img-top" %>
+  <% end %>
+  <figcaption class="attachment__caption">
+    <% if caption = blob.try(:caption) %>
+      <%= caption %>
     <% end %>
-    <figcaption class="attachment__caption">
-      <% if caption = blob.try(:caption) %>
-        <%= caption %>
-      <% end %>
-    </figcaption>
-  </figure>
-</div>
+  </figcaption>
+</figure>
