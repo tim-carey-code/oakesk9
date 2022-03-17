@@ -5,11 +5,11 @@ class ContactUs < MailForm::Base
   attribute :subject
 
   def headers
-    { 
-      subject: "#{subject}",
-      to: "disinhumepa@gmail.com",
-      email: "#{email}",
-      name: "#{name}" 
+    {
+      subject: subject.to_s,
+      to: 'disinhumepa@gmail.com',
+      email: email.to_s,
+      name: name.to_s
     }
   end
 end

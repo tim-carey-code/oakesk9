@@ -1,14 +1,26 @@
-<%= render @blog %>
-<p>Comments: <%= @blog.comments.count %></p>
-<br />
-<% @blog.comments.each do |comment| %>
-  <% @user = User.find(comment.user_id) %>
-  <p><%= comment.body %></p>
-  <p><%= time_ago_in_words(comment.created_at) %> ago by <%= @user.first_name + " " + @user.last_name %> </p>
-<% end %>
-<%= render 'comments/form' %>
-<div>
-  <%= link_to "Edit this blog", edit_blog_path(@blog) %> |
-  <%= link_to "Back to blogs", blogs_path %>
-  <%= button_to "Destroy this blog", @blog, method: :delete %>
+<div class="container d-flex justify-content-center align-items-center flex-column mt-2">
+  <div class="col-lg-4 mb-3 d-flex flex-row align-items-stretch">
+    <div class="card">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title text-center"><%= @blog.title %></h5>
+        <p class="card-text mb-4 text-center"><%= @blog.content %></p>
+        <% user = User.find(@blog.user_id) %>
+        <p class="card-text"><small class="text-muted">Posted by: <%= user.first_name %></small></p>
+        <p class="card-text"><small class="text-muted"><%= time_ago_in_words(@blog.created_at) %> ago</small></p>
+        <%= link_to "Edit this blog", edit_blog_path(@blog), class: "btn btn-primary mt-auto mb-2 align-self-start" %>
+        <%= button_to "Destroy this blog", @blog, class: "btn btn-danger", method: :delete %>
+      </div>
+    </div>
+  </div>
+  <p>Comments: <%= @blog.comments.count %></p>
+  <br />
+  <% @blog.comments.each do |comment| %>
+    <% @user = User.find(comment.user_id) %>
+    <p><%= comment.body %></p>
+    <p><%= time_ago_in_words(comment.created_at) %> ago by <%= @user.first_name + " " + @user.last_name %> </p>
+  <% end %>
+  <%= render 'comments/form' %>
+  <div>
+    <%= link_to "Back to blogs", blogs_path, class: "btn btn-secondary mb-2" %>
+  </div>
 </div>
