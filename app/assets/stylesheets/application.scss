@@ -30,14 +30,14 @@
 .nav-link-custom {
   color: #ffffff;
   display: block;
-  padding: 0.5rem 1rem;
+  margin: 0 .75rem;
   text-decoration: none;
   position: relative;
 }
 
 .nav-link-custom:hover {
   color: black;
-  text-decoration: underline;
+  border-bottom: 1px solid black;
 }
 
 .active-custom {

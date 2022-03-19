@@ -1,6 +1,6 @@
 <nav data-controller="active" class="navbar navbar-expand-lg navbar-light bg-danger">
   <div class="container-fluid">
-    <a id="brand-text" class="navbar-brand pe-5" href="/">Oakes K9 Training</a>
+    <%= link_to "Oakes K9 Training", root_url, class: "navbar-brand pe-5", id: "brand-text" %>
     <button class="navbar-toggler" 
             type="button" 
             data-bs-toggle="collapse"
@@ -16,20 +16,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item nav-text">
-          <a class="nav-link-custom active-custom" aria-current="page" href="/">Home</a>
+          <%= link_to "Home", root_url, class: "nav-link-custom active-custom" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link-custom" href="/blogs">Blog</a>
+          <%= link_to "Blog", blogs_url, class: "nav-link-custom" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link-custom" href="/contact">Contact</a>
+          <%= link_to "Contact", contact_url, class: "nav-link-custom" %>
         </li>
+      </ul>
+      <ul class="d-flex navbar-nav mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Sign Out", destroy_user_session_path, class: "nav-link-custom", data: { turbo_method: :delete }, method: :delete %>
           </li>
-          <li>
-            <%= current_user.first_name %>
+          <li class="nav-item m-auto">
+            Welcome <%= current_user.first_name %>
           </li>
         <% else %>
           <li class="nav-item">
