@@ -12,6 +12,7 @@ gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+gem 'google-cloud-storage', '~> 1.36', '>= 1.36.1'
 
 gem 'nokogiri', '~> 1.13', '>= 1.13.3'
 
