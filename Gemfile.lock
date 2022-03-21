@@ -355,7 +355,6 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.2)
-  ruby-vips
   selenium-webdriver
   sprockets-rails
   stimulus-rails
