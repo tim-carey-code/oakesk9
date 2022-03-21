@@ -14,6 +14,7 @@ google:
   project: oakesk9
   credentials: <%= Rails.root.join("config/oakesk9-bcab9e5a8543.json") %>
   bucket: oakes_bucket
+  public: true
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
 #   service: AzureStorage
