@@ -1,6 +1,6 @@
 [
   {
-    "origin": ["https://oakesk9.herokuapp.com", "http://localhost:3000"],
+    "origin": ["https://oakesk9.herokuapp.com"],
     "responseHeader": ["*"],
     "method": ["PUT", "GET", "HEAD", "DELETE", "OPTIONS", "POST"],
     "maxAgeSeconds": 1
