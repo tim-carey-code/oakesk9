@@ -30,6 +30,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+/config/oakesk9-bcab9e5a8543.json
+
 .env
 /public/packs
 /public/packs-test
