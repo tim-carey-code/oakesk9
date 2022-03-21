@@ -1,7 +1,6 @@
 class BlogsController < ApplicationController
   before_action :authenticate_admin!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_blog, only: %i[ show edit update destroy ]
-  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   # GET /blogs or /blogs.json
   def index
@@ -65,11 +64,6 @@ class BlogsController < ApplicationController
     def set_blog
       @blog = Blog.find(params[:id])
     end
-
-    def set_s3_direct_post
-      @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
-    end
-
     
     # Only allow a list of trusted parameters through.
     def blog_params
