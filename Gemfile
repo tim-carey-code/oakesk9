@@ -18,7 +18,6 @@ gem 'nokogiri', '~> 1.13', '>= 1.13.3'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'mail_form', '~> 1.9'
 
-gem 'aws-sdk-s3', require: false
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
