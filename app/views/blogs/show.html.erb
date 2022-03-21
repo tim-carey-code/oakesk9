@@ -4,6 +4,7 @@
       <div class="card-body d-flex flex-column">
         <h5 class="card-title text-center"><%= @blog.title %></h5>
         <p class="card-text mb-4 text-center"><%= @blog.content %></p>
+          <%= image_tag @blog.image if @blog.image.attached? %>
         <% user = User.find(@blog.user_id) %>
         <p class="card-text"><small class="text-muted">Posted by: <%= user.first_name %></small></p>
         <p class="card-text"><small class="text-muted"><%= time_ago_in_words(@blog.created_at) %> ago</small></p>
