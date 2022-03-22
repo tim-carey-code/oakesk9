@@ -82,13 +82,15 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
+    address: 'smtp.gmail.com',
     port: 587,
-    domain: 'https://oakesk9.herokuapp.com/',
-    user_name: 'apikey',
-    password: ENV['SENDGRID_API_KEY'],
-    authentication: :plain,
-    enable_starttls_auto: true
+    domain: 'oakesk9.herokuapp.com',
+    user_name: 'disinhumepa@gmail.com',
+    password: ENV['GMAIL_USER_PASSWORD'],
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    open_timeout: 5,
+    read_timeout: 5
   }
 
   # Use a different logger for distributed setups.
