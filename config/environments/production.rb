@@ -87,7 +87,7 @@ Rails.application.configure do
     domain: 'oakesk9.herokuapp.com',
     user_name: 'disinhumepa@gmail.com',
     password: ENV['GMAIL_USER_PASSWORD'],
-    authentication: 'plain',
+    authentication: :plain,
     enable_starttls_auto: true,
     open_timeout: 5,
     read_timeout: 5
