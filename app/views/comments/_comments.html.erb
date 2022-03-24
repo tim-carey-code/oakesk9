@@ -1,0 +1,13 @@
+  
+<p>Comments: <%= @blog.comments.count %></p>
+<br />
+<% @blog.comments.each do |comment| %>
+  <% @user = User.find(comment.user_id) %>
+  <p><%= comment.body %></p>
+  <p><%= time_ago_in_words(comment.created_at) %> ago by <%= @user.first_name + " " + @user.last_name %> </p>
+<% end %>
+<%= render 'comments/form' %>
+<div>
+  <%= link_to "Back to blogs", blogs_path, class: "btn btn-secondary mb-2" %>
+</div>
+</div>
