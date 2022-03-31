@@ -3,8 +3,15 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
     const blogContent = document.querySelectorAll('.trix-content')
+    const card = document.querySelectorAll('.card')
 
-    const imgEl = document.getElementsByTagName('img')
+    const readMoreBtn = document.createElement('button')
+    const btnText = document.createTextNode('Read More')
+
+    readMoreBtn.appendChild(btnText)
+
+    console.log(blogContent[0])
+
 
     for (let i = 0; i < blogContent.length; i++) {
       const blogText = blogContent[i].children[0].childNodes[0].textContent
@@ -16,10 +23,7 @@ export default class extends Controller {
 
       para.appendChild(node)
 
-      const readMoreBtn = document.createElement('button')
-      const readMoreText = document.createTextNode('...Read more')
 
-      readMoreBtn.appendChild(readMoreText)
 
 
 
@@ -27,10 +31,6 @@ export default class extends Controller {
       if (blogText.length > 80) {
         const newText = blogContent[i].children[0].childNodes[0]
         newText.textContent = para.textContent.slice(0, 140)
-        const cardText = document.querySelectorAll('.card-text')
-        cardText.insertBefore(readMoreBtn, blogContent[i])
-
-
 
       }
 
