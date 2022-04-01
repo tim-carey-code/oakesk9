@@ -10,3 +10,5 @@ pin 'bootstrap', to: 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/boots
 pin 'trix'
 pin '@rails/actiontext', to: 'actiontext.js'
 pin '@rails/ujs', to: 'https://ga.jspm.io/npm:@rails/ujs@6.1.5/lib/assets/compiled/rails-ujs.js'
+
+

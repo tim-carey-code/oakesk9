@@ -5,10 +5,12 @@
         <h5 class="card-title text-center"><%= @blog.title %></h5>
         <p class="card-text mb-4 text-center"><%= @blog.content %></p>
         <% user = User.find(@blog.user_id) %>
-        <p class="card-text"><small class="text-muted">Posted by: <%= user.first_name %></small></p>
-        <p class="card-text"><small class="text-muted"><%= time_ago_in_words(@blog.created_at) %> ago</small></p>
-        <%= link_to "Edit this blog", edit_blog_path(@blog), class: "btn btn-primary mt-auto mb-2 align-self-start" %>
-        <%= button_to "Destroy this blog", @blog, class: "btn btn-danger", method: :delete %>
+        <div class="text-center">
+          <p class="card-text"><small class="text-muted">Posted by: <%= user.first_name %></small></p>
+          <p class="card-text"><small class="text-muted"><%= time_ago_in_words(@blog.created_at) %> ago</small></p>
+          <%= link_to "Edit this blog", edit_blog_path(@blog), class: "btn btn-primary mt-auto mb-2 align-self-start" %>
+          <%= button_to "Destroy this blog", @blog, class: "btn btn-danger", method: :delete %>
+        </div>
       </div>
     </div>
   </div>
