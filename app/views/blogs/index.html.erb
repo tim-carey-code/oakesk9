@@ -1,3 +1,5 @@
+<%= link_to "New blog", new_blog_path, class: "btn btn-primary container new-blog d-flex justify-content-center align-items-center mt-2" %>
+
 <div class="container mt-2 d-flex justify-content-center align-items-center" id="blogs">
   <div class="row">
     <% @blogs.each do |blog| %>
@@ -5,4 +7,3 @@
     <% end %>
   </div>
 </div>
-<%= link_to "New blog", new_blog_path %>
