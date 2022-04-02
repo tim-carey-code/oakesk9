@@ -11,8 +11,6 @@
   </head>
   <body class="d-flex flex-column min-vh-100">
     <%= render partial: "layouts/navbar" %>
-<div id="root"></div>
-
     <% if notice %>
       <div id="notice" class="alert alert-success d-flex align-items-center alert-dismissible fade show mb-0" role="alert">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
@@ -32,6 +30,6 @@
       </div>
     <% end %>
     <%= yield %>
-      <%= render partial: "layouts/footer" %>
+    <%= render partial: "layouts/footer" %>
   </body>
 </html>

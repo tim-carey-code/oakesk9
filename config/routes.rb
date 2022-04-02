@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   devise_for :users
   get '/contact', to: 'contact_us#index'
   post '/contact', to: 'contact_us#create'
-  resources :home, only: [:index, :create]
+  resources :home, only: %i[index create]
   root to: 'home#index'
-
 end
