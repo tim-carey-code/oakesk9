@@ -11,4 +11,4 @@ pin 'trix'
 pin '@rails/actiontext', to: 'actiontext.js'
 pin '@rails/ujs', to: 'https://ga.jspm.io/npm:@rails/ujs@6.1.5/lib/assets/compiled/rails-ujs.js'
 
-
+pin "stimulus-read-more", to: "https://ga.jspm.io/npm:stimulus-read-more@3.0.0/dist/stimulus-read-more.es.js"
