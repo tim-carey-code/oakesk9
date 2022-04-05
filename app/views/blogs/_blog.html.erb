@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-sm-12 col-md-4 mb-3 d-flex flex-row align-items-stretch">
+<div class="col-lg-3 col-md-4 mb-3 d-flex flex-row align-items-stretch justify-content-center">
   <%= content_tag :div, class: "card", id: blog.id do %>
     <div 
       data-controller="read-more"
@@ -24,7 +24,7 @@
         <%= sanitize_action_text_content(blog.content.body) %>
       <% end %>
       <% if !blog.content.embeds.empty? %>
-        <%= image_tag blog.content.embeds.find{|embeds| embeds.image?} %>
+        <%= image_tag blog.content.embeds.find{|embeds| embeds.image?}, class: "img-fluid" %>
       <% end %>
       <% user = User.find(blog.user_id) %>
       <span class="card-text"><small class="text-muted">Posted <time datetime="<%= time_ago_in_words(blog.created_at) %>"><%= time_ago_in_words(blog.created_at) %></time> ago</small></span>
