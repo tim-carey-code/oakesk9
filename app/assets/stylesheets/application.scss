@@ -7,10 +7,6 @@
   padding: 0;
 }
 
-body, html {
-  width: 100vw;
-  height: 100vh;
-}
 
 p a:visited {
   color: #660199
@@ -69,6 +65,7 @@ p a:visited {
   background-color: black;
   color: white;
 }
+
 
 @include media-breakpoint-up(xs) {
   #blog-btn {
