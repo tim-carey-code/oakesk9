@@ -1,12 +1,11 @@
-
-<% if @blog.comments.exists? %>  
-    <p><%= @blog.comments %></p>
+<% if @blog.comments.exists? %>
+  <% @blog.comments.each do |comment| %>
+    <%= comment.body %>
+    <p><%= time_ago_in_words(comment.created_at) %></p>
+  <% end %>
 <% end %>
 <%= render 'comments/form' %>
-
 <div>
   <%= link_to "Back to blogs", blogs_path, class: "btn btn-secondary mb-2" %>
 </div>
-
 </div>
-
