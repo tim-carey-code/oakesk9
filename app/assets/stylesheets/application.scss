@@ -2,6 +2,15 @@
 
 @import 'bootstrap';
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+}
 
 p a:visited {
   color: #660199
