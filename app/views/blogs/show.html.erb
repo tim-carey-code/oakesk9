@@ -1,5 +1,5 @@
-<div class="col-lg-12 w-75 m-2 border border-danger">
-  <div class="card d-flex justify-content-center align-items-center">
+<article class="col-lg-12 m-2 mx-auto border w-75 border-danger">
+  <div class="card">
     <div class="card-body d-flex flex-column">
       <h5 class="card-title text-center mt-2"><%= @blog.title %></h5>
       <%= sanitize_action_text_content(@blog.content.body) %>
@@ -15,7 +15,7 @@
         <%= button_to "Destroy this blog", @blog, class: "btn btn-danger", method: :delete %>
       </div>
     </div>
-    <%= render partial: "comments/form", locals: {blog: @blog } %>
-    <%= render @blog.comments.order(id: :desc) %>
   </div>
-</div>
+  <%= render partial: "comments/form", locals: {blog: @blog } %>
+  <%= render @blog.comments.order(id: :desc) %>
+</article>
