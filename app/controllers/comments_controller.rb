@@ -1,13 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :set_blog, only: %i[show edit update destroy]
+  
   def create 
-    # @blog = Blog.find(params[:blog_id])
-    # @comment = @blog.comments.create(comment_params)
-    # @comment.user_id = current_user.id
-    # if @comment.save 
-    #   redirect_to blog_path(@blog), notice: "Comment created successfully"
-    # else
-    #   flash[:alert] = @comment.errors
-    # end
     @comment = current_user.comments.new(comment_params)
     if !@comment.save
       flash[:notice] = @comment.errors.full_message.to_sentence

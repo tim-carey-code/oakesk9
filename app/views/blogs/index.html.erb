@@ -1,4 +1,6 @@
-<%= link_to "New blog", new_blog_path, class: "btn btn-primary container new-blog d-flex justify-content-center align-items-center mt-2" %>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to "New blog", new_blog_path, class: "btn btn-primary container new-blog d-flex justify-content-center align-items-center mt-2" %>
+<% end %>
 <div class="container mt-2 d-flex justify-content-center align-items-center" id="blogs">
   <div class="row">
     <% @blogs.each do |blog| %>
