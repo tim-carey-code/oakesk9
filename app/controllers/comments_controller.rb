@@ -13,6 +13,8 @@ class CommentsController < ApplicationController
   
   def edit
     @blog = Blog.find(params[:blog_id])
+
+    puts @blog.id
     
     @comment = @blog.comments.find(params[:id]) 
   end
@@ -27,7 +29,7 @@ class CommentsController < ApplicationController
     @comment = @blog.comments.find(params[:id])
 
     if @comment.update(comment_params)
-      redirect_to blog_path(params[:blog_id]), notice: "Comment was sucessfully updated"
+      redirect_to blog_path(@blog), notice: "Comment was sucessfully updated"
     end
   end
 
