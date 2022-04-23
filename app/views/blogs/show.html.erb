@@ -4,7 +4,7 @@
       <h5 class="card-title text-center mt-2"><%= @blog.title %></h5>
       <%= sanitize_action_text_content(@blog.content.body) %>
       <% if !@blog.content.embeds.empty? %>
-        <%= image_tag @blog.content.embeds.find{|embeds| embeds.image?}, class: "container mb-3 img-fluid w-50" %>
+        <%= image_tag @blog.content.embeds.find { |embeds| embeds.image? }, class: "container mb-3 img-fluid w-50" %>
       <% end %>
       <% user = User.find(@blog.user_id) %>
       <div class="text-center m-4">
@@ -18,7 +18,7 @@
       </div>
     </div>
   </div>
-  <%= render partial: "comments/form", locals: {blog: @blog } %>
+  <%= render partial: "comments/form", locals: {blog: @blog} %>
   <p class="text-center">Comments <%= @blog.comments.count %> </p>
   <%= render @blog.comments.order(id: :desc) %>
 </article>

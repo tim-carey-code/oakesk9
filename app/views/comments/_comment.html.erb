@@ -4,7 +4,7 @@
   <% if user_signed_in? && comment.user_id == current_user.id %>
     <div class="d-flex justify-content-center align-items-center">
       <%= link_to "Edit", [:edit, @blog, comment], class: "btn btn-primary mt-auto mb-2 align-self-start" %>
-      <%= link_to 'Delete', [comment.blog, comment], method: :delete, class: "btn btn-danger m-2" %>
+      <%= link_to "Delete", [comment.blog, comment], method: :delete, class: "btn btn-danger m-2" %>
     </div>
   <% end %>
 </article>

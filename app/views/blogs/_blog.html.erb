@@ -1,21 +1,19 @@
 <div class="col-lg-3 col-md-4 mb-3 d-flex flex-row align-items-stretch justify-content-center">
   <%= content_tag :div, class: "card", id: blog.id do %>
-    <div 
+    <div
       data-controller="read-more"
       data-read-more-more-text-value="Read more"
-      data-read-more-less-text-value="Read less" 
-      class="card-body d-flex text-center flex-column"
-    >
+      data-read-more-less-text-value="Read less"
+      class="card-body d-flex text-center flex-column">
       <h5 class="card-title text-center"><%= blog.title %></h5>
       <% if blog.content.body.to_plain_text.length > 100 %>
         <div data-read-more-target="content" class="blog-text">
           <%= truncate (strip_tags sanitize_action_text_content(blog.content.body)), length: 150 %>
         </div>
         <div class="d-flex justify-content-center align-items-center">
-          <button 
-            data-action="read-more#toggle" 
-            class="btn w-30 m-3 btn-secondary"
-          >Read More</button>
+          <button
+            data-action="read-more#toggle"
+            class="btn w-30 m-3 btn-secondary">Read More</button>
         </div>
         <template data-read-more-target="full">
           <%= sanitize_action_text_content(blog.content.body) %>
@@ -24,7 +22,7 @@
         <%= sanitize_action_text_content(blog.content.body) %>
       <% end %>
       <% if !blog.content.embeds.empty? %>
-        <%= image_tag blog.content.embeds.find{|embeds| embeds.image?}, class: "img-fluid" %>
+        <%= image_tag blog.content.embeds.find { |embeds| embeds.image? }, class: "img-fluid" %>
       <% end %>
       <% user = User.find(blog.user_id) %>
       <span class="card-text"><small class="text-muted">Posted <time datetime="<%= time_ago_in_words(blog.created_at) %>"><%= time_ago_in_words(blog.created_at) %></time> ago</small></span>
