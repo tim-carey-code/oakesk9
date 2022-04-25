@@ -10,9 +10,9 @@
       <div class="text-center m-4">
         <p class="card-text"><small class="text-muted">Posted by: <%= user.first_name %></small></p>
         <p class="card-text"><small class="text-muted"><%= time_ago_in_words(@blog.created_at) %> ago</small></p>
-        <% if user_signed_in? && current_user.admin? && @blog.user.id == current_user.id %>
-          <%= link_to "Edit this blog", edit_blog_path(@blog), class: "btn btn-primary mt-auto mb-2 align-self-start" %>
-          <%= button_to "Destroy this blog", @blog, class: "btn btn-danger", method: :delete %>
+        <% if user_signed_in? && current_user.admin? %>
+          <%= link_to "Edit this blog", edit_blog_path(@blog), class: "m-2 btn btn-primary align-self-start" %>
+          <%= button_to "Destroy this blog", @blog, class: "btn btn-danger m-2", method: :delete %>
         <% end %>
         <%= link_to "Back to Blogs", blogs_url, class: "btn btn-secondary mt-auto mb-2 align-self-start" %>
       </div>
