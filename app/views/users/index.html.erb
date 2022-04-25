@@ -3,7 +3,7 @@
     <% @users.each do |user| %>
       <% if user.admin? %>
         <li> <%= user.email %> is Admin </li>
-      <%else %>
+      <% else %>
         <li> <%= user.email %> </li>
       <% end %>
     <% end %>

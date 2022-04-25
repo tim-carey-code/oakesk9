@@ -1,12 +1,11 @@
 <div class="text-center m-2">
   <form action="<%= blog_comments_path(blog) %>" method="post">
-    <input type="hidden" name="authenticity_token" />
+    <input type="hidden" name="authenticity_token">
     <div>
-      <p>Comments <%= blog.comments.count %> </p>
       <label for="comment">Leave a comment</label>
     </div>
-    <input id="comment" type="text" name="comment[body]" />
-    <br />
-    <input type="submit" value="Submit" class="btn btn-primary m-2" />
+    <input id="comment" type="text" name="comment[body]">
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary m-2">
   </form>
 </div>

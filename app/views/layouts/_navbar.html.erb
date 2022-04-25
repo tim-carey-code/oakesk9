@@ -1,16 +1,14 @@
 <nav data-controller="active" class="navbar navbar-expand-lg navbar-light bg-danger">
   <div class="container-fluid">
     <%= link_to "Oakes K9 Training", root_url, class: "navbar-brand pe-5", id: "brand-text" %>
-    <button class="navbar-toggler" 
-            type="button" 
+    <button class="navbar-toggler"
+            type="button"
             data-bs-toggle="collapse"
-             data-bs-target="#navbarSupportedContent" 
+             data-bs-target="#navbarSupportedContent"
              aria-controls="navbarSupportedContent"
-              aria-expanded="false" 
+              aria-expanded="false"
               aria-label="Toggle navigation"
-              style="background-color: white;"
-              
-    >
+              style="background-color: white;">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,7 +26,7 @@
       <ul class="d-flex navbar-nav mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "Sign Out", destroy_user_session_path, class: "nav-link-custom", data: { turbo_method: :delete }, method: :delete %>
+            <%= link_to "Sign Out", destroy_user_session_path, class: "nav-link-custom", data: {turbo_method: :delete}, method: :delete %>
           </li>
           <li class="nav-item m-auto">
             Welcome <%= current_user.first_name %>

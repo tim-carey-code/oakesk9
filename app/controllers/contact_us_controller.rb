@@ -10,9 +10,9 @@ class ContactUsController < ApplicationController
     respond_to do |format|
       if @contact.deliver
         @contact = ContactUs.new
-        format.html { redirect_to home_index_url, notice: 'Thanks for your question, will respond shortly.' }
+        format.html { redirect_to home_index_url, notice: "Thanks for your question, will respond shortly." }
       else
-        format.html { render 'index', alert: 'error in sending your email' }
+        format.html { render "index", alert: "error in sending your email" }
       end
     end
   end
