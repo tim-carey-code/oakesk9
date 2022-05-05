@@ -9,12 +9,28 @@ local:
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 
 # Remember not to checkin your GCS keyfile to a repository
+# google:
+#   service: GCS
+#   project: oakesk9
+#   credentials: <%= Rails.root.join("config/oakesk9-bcab9e5a8543.json") %>
+#   bucket: oakes_bucket
+#   public: true
+
 google:
   service: GCS
-  project: oakesk9
-  credentials: <%= Rails.root.join("config/oakesk9-bcab9e5a8543.json") %>
-  bucket: oakes_bucket
-  public: true
+  credentials:
+    type: ENV["GCS_TYPE"]
+    project_id: ENV["GCS_PROJECT_ID"]
+    private_key_id: ENV["GCS_PRIVATE_KEY_ID"]
+    private_key: ENV["GCS_PRIVATE_KEY"]
+    client_email: ENV["GCS_CLIENT_EMAIL"]
+    client_id: ENV["GCS_CLIENT_ID"]
+    auth_uri: ENV["GCS_AUTH_URI"]
+    token_uri: ENV["GCS_TOKEN_URI"]
+    auth_provider_x509_cert_url: ENV["GCS_AUTH_PROVIDER_CERT_URL"]
+    client_x509_cert_url: ENV["GCS_CERT_URL"]
+  project: ENV["GCS_PROJECT"]
+  bucket: ENV["GCS_BUCKET"]
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
 #   service: AzureStorage
