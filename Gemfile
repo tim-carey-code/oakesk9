@@ -13,7 +13,7 @@ gem "sprockets-rails"
 gem "google-cloud-storage", "~> 1.36", ">= 1.36.1"
 gem "pg", "~> 1.1"
 
-gem "nokogiri", "~> 1.13", ">= 1.13.3"
+gem "nokogiri", "~> 1.13"
 
 gem "devise", "~> 4.8", ">= 4.8.1"
 gem "mail_form", "~> 1.9"
