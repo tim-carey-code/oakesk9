@@ -19,7 +19,7 @@ gem "devise", "~> 4.8", ">= 4.8.1"
 gem "mail_form", "~> 1.9"
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", "~> 5.6"
 
 gem "bootstrap", "~> 5.1.3"
 
