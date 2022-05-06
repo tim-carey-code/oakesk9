@@ -12,8 +12,8 @@ google:
   credentials:
     type: 'service_account'
     project_id: 'oakesk9dogtraining'
-    private_key_id: <%= Rails.application.credentials.dig(:gcs, :private_key_id) %>
-    private_key: <%= Rails.application.credentials.dig(:gcs, :private_key).dump %>
+    private_key_id: <%= Rails.application.credentials.google.private_key_id %>
+    private_key: <%= Rails.application.credentials.google.private_key%>
     client_email: 'oakes-service-account@oakesk9dogtraining.iam.gserviceaccount.com'
     client_id: '110923747442546546040'
     auth_uri: 'https://accounts.google.com/o/oauth2/auth'
