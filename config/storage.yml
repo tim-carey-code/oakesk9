@@ -5,7 +5,6 @@ test:
 local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
-
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 
 # Remember not to checkin your GCS keyfile to a repository
@@ -14,6 +13,7 @@ google:
   project: oakesk9dogtraining
   credentials: <%= Rails.root.join("config/secrets/oakesk9dogtraining.json") %>
   bucket: oakesk9_bucket
+  public: true
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
 #   service: AzureStorage
