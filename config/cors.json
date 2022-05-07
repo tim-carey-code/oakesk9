@@ -1,8 +1,0 @@
-[
-  {
-    "origin": ["http://www.oakesk9training.com"],
-    "responseHeader": ["*"],
-    "method": ["PUT", "GET", "HEAD", "DELETE", "OPTIONS", "POST"],
-    "maxAgeSeconds": 1
-  }
-]
