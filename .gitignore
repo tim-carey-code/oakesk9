@@ -30,6 +30,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+/config/oakesk9dogtraining.json
+
 
 .env
 /public/packs
