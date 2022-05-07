@@ -10,8 +10,9 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem "google-cloud-storage", "~> 1.36", ">= 1.36.1"
 gem "pg", "~> 1.1"
+
+
 
 gem "nokogiri", "~> 1.13"
 
@@ -53,6 +54,8 @@ gem "bootsnap", require: false
 gem "erb_lint", require: false
 
 gem 'kaminari'
+
+gem 'aws-sdk-s3', '~> 1.114'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
