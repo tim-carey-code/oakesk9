@@ -9,7 +9,7 @@ local:
 
 google:
   service: GCS
-  credentials: <%= Rails.root.join("config/oakesk9dogtraining.json") %>
+  credentials: <%= Rails.root.join("config", "oakesk9dogtraining.json").to_s %>
   project: 'oakesk9dogtraining'
   bucket: 'oakesk9_bucket'
 # google:
