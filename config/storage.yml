@@ -8,9 +8,19 @@ local:
 
 google:
   service: GCS
-  credentials: <%= Rails.root.join("config/keyfile.json") %>
-  project: 'oakesk9dogtraining'
-  bucket: 'oakesk9_bucket'
+  credentials:
+    type: 'service_account'
+    project_id: <%= ENV['GCS_PROJECT_ID'] %>
+    private_key_id: <%= ENV['GCS_PRIVATE_KEY_ID'] %>
+    private_key: <%= ENV['GCS_PRIVATE_KEY'] %>
+    client_email: <%= ENV['GCS_CLIENT_EMAIL'] %>
+    client_id: <%= ENV['GCS_CLIENT_ID'] %>
+    auth_uri: <%= ENV['GCS_AUTH_URI'] %>
+    token_uri: <%= ENV['GCS_TOKEN_URI'] %>
+    auth_provider_x509_cert_url: <%= ENV['GCS_AUTH_PROVIDER_CERT_URL'] %>
+    client_x509_cert_url: <%= ENV['GCS_CERT_URL'] %>
+  project: <%= ENV['GCS_PROJECT'] %>
+  bucket: <%= ENV['GCS_BUCKET'] %>
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
 #   service: AzureStorage
