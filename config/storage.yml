@@ -5,28 +5,24 @@ test:
 local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
-# Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
+   
 
-google:
+  google:
   service: GCS
-  credentials: <%= Rails.root.join("config", "oakesk9dogtraining.json").to_s %>
-  project: 'oakesk9dogtraining'
-  bucket: 'oakesk9_bucket'
-# google:
-#   service: GCS
-#   credentials:
-#     type: 'service_account'
-#     project_id: 'oakesk9dogtraining'
-#     private_key_id: <%= Rails.application.credentials.google.private_key_id %>
-#     private_key: <%= Rails.application.credentials.google.private_key%>
-#     client_email: 'oakes-service-account@oakesk9dogtraining.iam.gserviceaccount.com'
-#     client_id: '110923747442546546040'
-#     auth_uri: 'https://accounts.google.com/o/oauth2/auth'
-#     token_uri: 'https://accounts.google.com/o/oauth2/token'
-#     auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs'
-#     client_x509_cert_url: 'https://www.googleapis.com/robot/v1/metadata/x509/oakes-service-account%40oakesk9dogtraining.iam.gserviceaccount.com'
-#   project: 'oakesk9dogtraining'
-#   bucket: 'oakesk9_bucket'
+  credentials:
+    type: "service_account"
+    project_id: "oakesk9dogtraining"
+    private_key_id: <%= Rails.application.credentials.dig(:gcs, :private_key_id) %>
+    private_key: <%= Rails.application.credentials.dig(:gcs, :private_key) %>
+    client_email: "oakes-service-account@oakesk9dogtraining.iam.gserviceaccount.com"
+    client_id: "110923747442546546040"
+    auth_uri: "https://accounts.google.com/o/oauth2/auth"
+    token_uri: "https://accounts.google.com/o/oauth2/token"
+    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+    client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/oakes-service-account%40oakesk9dogtraining.iam.gserviceaccount.com"
+  project: "oakesk9dogtraining"
+  bucket: "oakesk9_bucket"
+
 # Use bin/rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
 #   service: AzureStorage
