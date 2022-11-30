@@ -1,6 +1,6 @@
-# fly.toml file generated for oakesk9 on 2022-11-29T09:42:54-05:00
+# fly.toml file generated for muddy-leaf-7207 on 2022-11-29T13:45:54-05:00
 
-app = "oakesk9"
+app = "muddy-leaf-7207"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
