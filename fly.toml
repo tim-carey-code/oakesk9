@@ -1,6 +1,6 @@
-# fly.toml file generated for muddy-leaf-7207 on 2022-11-29T13:45:54-05:00
+# fly.toml file generated for oakes on 2022-12-01T10:21:53-05:00
 
-app = "muddy-leaf-7207"
+app = "oakes"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []

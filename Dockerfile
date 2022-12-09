@@ -24,7 +24,7 @@ FROM quay.io/evl.ms/fullstaq-ruby:${RUBY_VERSION}-${VARIANT} as base
 LABEL fly_launch_runtime="rails"
 
 ARG NODE_VERSION=15.0.0
-ARG YARN_VERSION=1.22.19
+ARG YARN_VERSION=latest
 ARG BUNDLER_VERSION=2.3.9
 
 ARG RAILS_ENV=production
@@ -127,6 +127,7 @@ ENV SECRET_KEY_BASE 1
 # Run build task defined in lib/tasks/fly.rake
 ARG BUILD_COMMAND="bin/rails fly:build"
 RUN ${BUILD_COMMAND}
+ENV RAILS_MASTER_KEY=fake
 
 # Default server start instructions.  Generally Overridden by fly.toml.
 ENV PORT 8080
