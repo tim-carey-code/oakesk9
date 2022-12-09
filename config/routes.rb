@@ -9,8 +9,4 @@ Rails.application.routes.draw do
   post "/contact", to: "contact_us#create"
   resources :home, only: %i[index create]
   root to: "home#index"
-
-  devise_scope :user do
-    post '/confirm/:confirmation_token', :to => "devise/confirmations#show", :as => "user_confirm"
-  end
 end
