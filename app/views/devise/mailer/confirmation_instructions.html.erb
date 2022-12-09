@@ -1,3 +1,4 @@
 <p>Welcome <%= @user.first_name %>!</p>
 <p>You can confirm your account email through the link below:</p>
-<p><%= link_to "Confirm my account", confirmation_url(@resource, confirmation_token: @token) %></p>
+<!-- <p><%# link_to "Confirm my account", confirmation_url(@resource, confirmation_token: @token) %></p> -->
+<%= link_to 'Confirm my account bro', user_confirm_url(@resource.confirmation_token) %>
