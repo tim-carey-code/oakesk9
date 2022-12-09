@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   devise_scope :user do
-    match '/confirm/:confirmation_token', :to => "devise/confirmations#show", :as => "user_confirm", only_path: false, via: [:get, :post]
+    post '/confirm/:confirmation_token', :to => "devise/confirmations#show", :as => "user_confirm"
   end
 end
