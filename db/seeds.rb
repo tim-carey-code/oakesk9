@@ -2,6 +2,8 @@
 
 require 'faker'
 
+User.create!(email: 'example@email.com', password: 'password', admin: true, first_name: 'Foo', last_name: 'Bar', password_confirmation: 'password')
+
 (18..70).each do |id|
   Blog.create!(
     id: id,

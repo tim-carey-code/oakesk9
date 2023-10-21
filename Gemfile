@@ -7,7 +7,6 @@ ruby '3.0.2'
 
 gem 'aws-sdk-s3', '~> 1.114'
 gem 'bootsnap', require: false
-gem 'bootstrap', '~> 5.1.3'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'erb_lint', require: false
 gem 'image_processing', '~> 1.2'
@@ -43,3 +42,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem "tailwindcss-rails", "~> 2.0"
