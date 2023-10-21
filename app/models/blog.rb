@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Blog < ApplicationRecord
   validates :title, :content, presence: true
   belongs_to :user
@@ -5,5 +7,4 @@ class Blog < ApplicationRecord
   has_rich_text :content
 
   paginates_per 12
-  
 end

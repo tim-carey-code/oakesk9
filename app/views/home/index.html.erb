@@ -1,16 +1,20 @@
-<button data-controller="scroll" id="myBtn" class='btn btn-danger scroll-top' title='Go to top'>
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-up" viewBox="0 0 16 16">
-    <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
-    <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-  </svg>
-</button>
-<div class="jumbotron">
+<!-- <div class="jumbotron">
   <div class="jumbotron-container position-absolute top-0 start-50 translate-middle-x header-text container text-center mt-4 p-5 rounded" style="background-color: rgba(255, 255, 255, 0.5);">
     <h1 class="welcome-heading">Welcome to Oakes K9 Training</h1>
     <p class="slogan">Training from your dogs point of view!
     </p>
     <button id="contact-btn" class="btn btn-primary">Contact</button>
     <a id="blog-btn" href='/blogs' class='btn btn-secondary'>Blog</a>
+  </div>
+</div> -->
+<div class="hero min-h-screen" style="background-image: url(<%= asset_path "oakes_dogs.jpg" %>);">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-center text-neutral-content">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold">Oakes K9 Training</h1>
+      <p class="mb-5">Training from your dogs point of view!</p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
   </div>
 </div>
 <main>

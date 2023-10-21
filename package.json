@@ -1,5 +1,14 @@
 {
   "dependencies": {
-    "stimulus-read-more": "^3.0.0"
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^7.3.0",
+    "@rails/actiontext": "^7.1.1",
+    "daisyui": "^3.9.3",
+    "esbuild": "^0.19.5",
+    "stimulus-read-more": "^3.0.0",
+    "trix": "^2.0.7"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets"
   }
 }

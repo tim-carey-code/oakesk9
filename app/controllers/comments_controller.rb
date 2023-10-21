@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create edit destroy update]
 
   def create
     @comment = current_user.comments.new(comment_params)
 
-    if @comment.save
-      redirect_to blog_path(params[:blog_id])
-      flash[:notice] = "Comment created successfully"
-    end
+    return unless @comment.save
+
+    redirect_to blog_path(params[:blog_id])
+    flash[:notice] = 'Comment created successfully'
   end
 
   def edit
@@ -27,9 +29,9 @@ class CommentsController < ApplicationController
 
     @comment = @blog.comments.find(params[:id])
 
-    if @comment.update(comment_params)
-      redirect_to blog_path(@blog), notice: "Comment was sucessfully updated"
-    end
+    return unless @comment.update(comment_params)
+
+    redirect_to blog_path(@blog), notice: 'Comment was sucessfully updated'
   end
 
   def destroy
@@ -37,10 +39,10 @@ class CommentsController < ApplicationController
 
     @comment = @blog.comments.find(params[:id])
 
-    if @comment.destroy
-      redirect_to blog_path(params[:blog_id])
-      flash[:notice] = "Comment successfully destroyed"
-    end
+    return unless @comment.destroy
+
+    redirect_to blog_path(params[:blog_id])
+    flash[:notice] = 'Comment successfully destroyed'
   end
 
   private
