@@ -10,7 +10,6 @@ gem 'bootsnap', require: false
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'erb_lint', require: false
 gem 'image_processing', '~> 1.2'
-gem 'importmap-rails'
 gem 'jbuilder'
 gem 'kaminari'
 gem 'mail_form', '~> 1.9'
@@ -44,3 +43,5 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.0"
+
+gem "jsbundling-rails", "~> 1.2"
